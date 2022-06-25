@@ -1,75 +1,69 @@
 #include <iostream>
 using namespace std;
-class node{
-  public:
-      void  input();
-      void proses();
-      void output();
+class studi{
+  private:
+    int *nim;
+    int nimMhs[10];
+    string *nama;
+    string namaMhs[10];
     
-    node *berikut;
-    node *node1, *node2, *node3, *node4, *node5;
+  public:
+  	void windy();
+  	void angga();
+  	void audila();
 
-  private:  
-     string nama;
-    int nim;
-    string A[20];
-        int B[20];
-  int i;
 };
 
+void studi::windy(){
 
-void node::input(){
-	
-	 for( int i=0; i<5; i++){  
-  cout<<"Masukan Nama : ";
-  cin>>A[i];
-  cout<<"Masukan Nim : ";
-  cin>>B[i];
-    }
- 
-}
-void node::proses(){
-  node1 = new node();
-  node2 = new node();
-  node3 = new node();
-  node4 = new node();
-  node5 = new node();
-
-  node1-> nim = B[1];
-  node1-> nama = A[1];
-  node1-> berikut = node2;
-
-  node2-> nim = B[2];
-  node2-> nama = A[2];
-  node2-> berikut = node3;
-
-  node3-> nim = B[3];
-  node3-> nama = A[3];
-  node3-> berikut = node4;
-
-  node4-> nim = B[4];
-  node4-> nama = A[4];
-  node4-> berikut = node5;
-
-  node5-> nim = B[5];
-  node5-> nama = A[5];
-  node5-> berikut = NULL;
+  cout<<"================================="<<endl;
+  cout << "|\tMAHASISWA YANG MASUK \t\t|"<<endl;
+	cout << "|\t  Babak FINAL\t\t\t\t|"<<endl;
+	cout<<"================================="<<endl;
+  for (int i=0; i<5; i++){
+    cout << "MAHASISWA "<<i+1<<endl;
+    cout << "NIM  : ";
+    cin >> nimMhs[i];
+    cout << "NAMA : ";
+    cin >> namaMhs[i];
   }
+  cout<<endl<<endl;
+}
+void studi::angga(){
 
-void node::output(){
+  cout << "============================="<<endl;
+  cout << "|\tDATA YANG TERSIMPAN\t\t|"<<endl;
+  cout << "============================="<<endl;
+  nim = new int[5];
+  nama = new string[5];
+  for(int i=0; i<5; i++){
+    *nim = nimMhs[i];
+    nim += 1;
+    *nama = namaMhs[i];
+    nama+=1;
+  }
+}
+void studi::audila(){
 
-    for(int i=0;i<5;i++){
-      cout<<"\n Nama ke-"<<i+1<<":";
-      cout<<A[i];
+  nim -=5 ;
+  nama -= 5;
+  cout<<"|\tDATA MAHASISWA\t\t\t|"<<endl;
+  cout << "============================"<<endl;
+  for (int i=0; i<5; i++) {
+    cout << "\nNama ke-" << i+1 << "\t : ";
+    cout << *nama ;
+    nama += 1;
+    cout << "\nNim \t\t : " ;
+    cout << *nim ;
+    nim += 1;
+  }
+  cout<<endl;
+}
+int main(){
+
+  studi sk;
+  sk.windy();
+  sk.angga();
+  sk.audila();
   
-      cout<<"\n NIM: ";
-      cout<<B[i];
-    
-    }
-} 
-int main() {
- node X;
-  X. input();
-  X.proses();
-  X.output();
 }
